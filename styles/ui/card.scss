@@ -1,0 +1,16 @@
+.card {
+  align-items: center;
+  background: rgba(0, 0, 0, 0.1);
+  // border: 1px solid $white;
+  border-radius: 3px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: center;
+  width: 80%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: 20px;
+}

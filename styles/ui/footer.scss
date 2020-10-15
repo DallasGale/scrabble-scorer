@@ -1,0 +1,36 @@
+.footer-totals {
+  bottom: 0;
+  display: flex;
+  height: auto;
+  flex-direction: row;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+}
+
+.score-total {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  display: flex;
+  font-size: 40px;
+  flex: 1;
+  height: 110px;
+  justify-content: center;
+
+  @include respond-to(tablet-up) {
+  }
+}
+
+/* .score-total:nth-child(1) {
+  background: red;
+}
+.score-total:nth-child(2) {
+  background: green;
+}
+.score-total:nth-child(3) {
+  background: pink;
+}
+.score-total:nth-child(4) {
+  background: blue;
+} */

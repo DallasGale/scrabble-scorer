@@ -1,0 +1,62 @@
+.primary-btn {
+  background: none;
+  -webkit-box-shadow: 10px 10px 26px -6px rgba(0, 0, 0, 0.21);
+  -moz-box-shadow: 10px 10px 26px -6px rgba(0, 0, 0, 0.21);
+  box-shadow: 10px 10px 26px -6px rgba(0, 0, 0, 0.21);
+  border: 2px solid $white;
+  cursor: pointer;
+  display: flex;
+  height: 50px;
+  color: white;
+  width: 100%;
+  border-radius: 2px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  transition: all cubic-bezier(0.895, 0.03, 0.685, 0.22) 0.1s;
+  &:focus,
+  &:hover {
+    // @include focusRingStyle;
+    -webkit-box-shadow: 0px 0px 2px -6px rgba(0, 0, 0, 0.41);
+    -moz-box-shadow: 0px 0px 2px -6px rgba(0, 0, 0, 0.41);
+    box-shadow: 0px 0px 2px -6px rgba(0, 0, 0, 0.41);
+    transform: translateY(2px);
+    transition: all cubic-bezier(0.895, 0.03, 0.685, 0.22) 0.1s;
+  }
+
+  @include respond-to(tablet-up) {
+    font-size: 30px;
+    height: 70px;
+  }
+}
+
+.priamry-btn--add {
+  border: none;
+  background: #030922;
+}
+.priamry-btn--total {
+  border: none;
+  background: white;
+  color: #030922;
+}
+
+.priamry-btn--total {
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @include respond-to(tablet-up) {
+    flex-direction: row;
+  }
+  input {
+    flex: 1;
+    max-width: 100%;
+    min-height: 41px;
+    @include respond-to(tablet-up) {
+      margin: 5px;
+      max-width: calc(50% - 10px);
+    }
+  }
+}

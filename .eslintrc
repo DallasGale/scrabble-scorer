@@ -1,0 +1,11 @@
+{
+  "root": true,
+  "extends": ["eslint:recommended"],
+  "ignorePatterns": ["app/assets/javascripts/hhd/*"],
+  "rules": {
+    "semi": ["error", "never"],
+    "quotes": ["error", "double"],
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "react/prop-types": 0
+  }
+}

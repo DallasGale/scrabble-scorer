@@ -1,0 +1,25 @@
+.header {
+  align-items: center;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  height: auto;
+  justify-content: flex-start;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+.header__content {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  padding: 10px;
+}
+.header__logo {
+  flex: 1;
+}
+
+.header__actions {
+  flex: 1;
+  text-align: right;
+}

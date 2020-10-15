@@ -1,0 +1,35 @@
+/* typography */
+.typography__heading--01 {
+  font-size: 26px;
+  margin: 0;
+}
+
+.typography__heading--02 {
+  font-size: 30px;
+  margin: 0;
+}
+.typography__heading--03 {
+  font-size: 30px;
+  margin: 0;
+  @include respond-to(tablet-up) {
+    font-size: 70px;
+  }
+}
+
+.typography__caption--01 {
+  font-size: 17px;
+  margin: 0;
+}
+.typography__caption--02 {
+  font-size: 13px;
+}
+
+.typography__color--black {
+  color: $black;
+}
+.typography__color--white {
+  color: $white;
+}
+.typography__color--blue {
+  color: $blue;
+}
