@@ -1,7 +1,7 @@
 .score-card {
   display: flex;
   flex-direction: row;
-  height: calc(100vh - 110px);
+  height: 85vh;
 }
 
 .score-card__head {
@@ -10,6 +10,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  max-height: 230px;
   width: 100%;
 }
 .score-col {
@@ -28,7 +29,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 120px);
+  height: auto;
   width: 100%;
   overflow: scroll;
 }
