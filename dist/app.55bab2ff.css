@@ -392,9 +392,10 @@ input {
   display: flex;
   font-size: 40px;
   flex: 1;
-  height: 15vh;
+  height: 110px;
   justify-content: center;
 }
+
 /* .score-total:nth-child(1) {
   background: red;
 }

@@ -63,6 +63,10 @@ import {
   p3_totalCell,
 } from "./variables";
 
+// Set height here because 100vh in css not quite working on ios
+const scoreCardEl = document.querySelector(".score-card");
+scoreCardEl.style.height = window.innerHeight - 110;
+
 function handleScoreSubmit(playerInput, playerOutput, playerId) {
   if (playerInput.value === 0 || playerInput.value === "") {
     return;

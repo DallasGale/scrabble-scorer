@@ -338,6 +338,10 @@ var _handlers = require("./handlers");
 
 var _variables = require("./variables");
 
+// Set height here because 100vh in css not quite working on ios
+var scoreCardEl = document.querySelector(".score-card");
+scoreCardEl.style.height = window.innerHeight - 110;
+
 function handleScoreSubmit(playerInput, playerOutput, playerId) {
   if (playerInput.value === 0 || playerInput.value === "") {
     return;
@@ -503,7 +507,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59916" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60882" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
