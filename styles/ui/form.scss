@@ -35,6 +35,8 @@
 }
 
 input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
   cursor: pointer;
   position: relative;
   left: 56px;
@@ -57,6 +59,8 @@ input[type="radio"]:checked + label {
 }
 
 .score-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
   background: rgba(0, 0, 0, 0.2);
   margin-bottom: 20px;
   flex: 1;

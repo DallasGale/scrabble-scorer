@@ -1,4 +1,6 @@
 .primary-btn {
+  -webkit-appearance: none;
+  -moz-appearance: none;
   background: none;
   -webkit-box-shadow: 10px 10px 26px -6px rgba(0, 0, 0, 0.21);
   -moz-box-shadow: 10px 10px 26px -6px rgba(0, 0, 0, 0.21);
@@ -51,6 +53,8 @@
     flex-direction: row;
   }
   input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
     flex: 1;
     max-width: 100%;
     min-height: 41px;
