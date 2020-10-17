@@ -41,3 +41,10 @@ body {
   align-items: center;
   display: flex;
 }
+
+input,
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}

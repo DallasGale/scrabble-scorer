@@ -223,6 +223,8 @@ input {
 }
 
 .primary-btn {
+  -webkit-appearance: none;
+  -moz-appearance: none;
   background: none;
   -webkit-box-shadow: 10px 10px 26px -6px rgba(0, 0, 0, 0.21);
   -moz-box-shadow: 10px 10px 26px -6px rgba(0, 0, 0, 0.21);
@@ -275,6 +277,7 @@ input {
 }
 .button-group input {
   flex: 1;
+  justify-content: center;
   max-width: 100%;
   min-height: 41px;
 }
@@ -450,6 +453,8 @@ input {
 }
 
 input[type=radio] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
   cursor: pointer;
   position: relative;
   left: 56px;
@@ -473,6 +478,8 @@ input[type=radio]:checked + label:before {
 }
 
 .score-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
   background: rgba(0, 0, 0, 0.2);
   margin-bottom: 20px;
   flex: 1;
@@ -513,6 +520,13 @@ body {
 .app {
   align-items: center;
   display: flex;
+}
+
+input,
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 /*# sourceMappingURL=/app.55bab2ff.css.map */

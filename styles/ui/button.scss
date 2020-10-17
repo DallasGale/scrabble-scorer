@@ -53,9 +53,8 @@
     flex-direction: row;
   }
   input {
-    -webkit-appearance: none;
-    -moz-appearance: none;
     flex: 1;
+    justify-content: center;
     max-width: 100%;
     min-height: 41px;
     @include respond-to(tablet-up) {
