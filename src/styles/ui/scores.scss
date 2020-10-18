@@ -1,7 +1,8 @@
 .score-card {
   display: flex;
   flex-direction: row;
-  height: 80%;
+  height: calc(100vh - 110px);
+  height: calc(-webkit-fill-available - 110px);
   position: absolute;
   top: 0;
   left: 0;
