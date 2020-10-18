@@ -17,7 +17,6 @@
   transition: all cubic-bezier(0.895, 0.03, 0.685, 0.22) 0.1s;
   &:focus,
   &:hover {
-    // @include focusRingStyle;
     -webkit-box-shadow: 0px 0px 2px -6px rgba(0, 0, 0, 0.41);
     -moz-box-shadow: 0px 0px 2px -6px rgba(0, 0, 0, 0.41);
     box-shadow: 0px 0px 2px -6px rgba(0, 0, 0, 0.41);
@@ -39,9 +38,6 @@
   border: none;
   background: white;
   color: #030922;
-}
-
-.priamry-btn--total {
 }
 
 .button-group {

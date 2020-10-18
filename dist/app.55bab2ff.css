@@ -137,8 +137,9 @@ table {
   border-radius: 20px;
   height: 100vh;
   margin: 0 auto;
-  padding: 0 0 0 0;
   overflow: hidden;
+  padding: 0 0 0 0;
+  position: relative;
   width: 100%;
 }
 
@@ -149,7 +150,10 @@ table {
 .score-card {
   display: flex;
   flex-direction: row;
-  height: 55vh;
+  height: 50vh;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .score-card__head {
@@ -303,6 +307,7 @@ input {
   left: 0;
   right: 0;
   padding: 20px;
+  z-index: 5;
 }
 
 /* typography */
