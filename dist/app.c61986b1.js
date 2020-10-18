@@ -117,7 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/handlers.js":[function(require,module,exports) {
+})({"src/js/handlers.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -218,7 +218,7 @@ function saveInitials(playerSaveBtn, formEl) {
     hide(formEl);
   });
 }
-},{}],"js/variables.js":[function(require,module,exports) {
+},{}],"src/js/variables.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -331,155 +331,154 @@ var p4_totalCell = document.querySelector("#p4-total-cell");
 exports.p4_totalCell = p4_totalCell;
 var p4_showTotal = document.querySelector("#p4-total");
 exports.p4_showTotal = p4_showTotal;
-},{}],"app.js":[function(require,module,exports) {
+},{}],"app.ts":[function(require,module,exports) {
 "use strict";
 
-var _handlers = require("./js/handlers");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-var _variables = require("./js/variables");
+var handlers_1 = require("./src/js/handlers");
 
-// Set height here because 100vh in css not quite working on ios
-var scoreCardEl = document.querySelector(".score-card");
-scoreCardEl.style.height = window.innerHeight - 110;
+var variables_1 = require("./src/js/variables"); // Set height here because 100vh in css not quite working on ios
+// const scoreCardEl = document.querySelector(".score-card");
+// scoreCardEl.style.height = window.innerHeight - 110;
+
 
 function handleScoreSubmit(playerInput, playerOutput, playerId) {
   if (playerInput.value === 0 || playerInput.value === "") {
     return;
   } else {
-    (0, _handlers.printScore)(playerInput.value, playerInput, playerOutput, playerId);
+    handlers_1.printScore(playerInput.value, playerInput, playerOutput, playerId);
   }
 }
 
 function handleScoreTotals(playerCalcTotal, playerShowTotal, liClassName) {
-  if (playerCalcTotal.innerText === _variables.stillPlayingLabel) {
+  if (playerCalcTotal.innerText === variables_1.stillPlayingLabel) {
     playerShowTotal.innerText = null;
-    playerCalcTotal.innerText = _variables.calcTotalLabel;
+    playerCalcTotal.innerText = variables_1.calcTotalLabel;
   } else {
-    (0, _handlers.calculateTotal)(playerShowTotal, playerCalcTotal, _variables.stillPlayingLabel, liClassName);
+    handlers_1.calculateTotal(playerShowTotal, playerCalcTotal, variables_1.stillPlayingLabel, liClassName);
   }
 }
 
-_variables.commonAncestorEl.onclick = function (e) {
+variables_1.commonAncestorEl.onclick = function (e) {
   e.preventDefault();
   var target = e.target; // Score Submits
 
-  if (target.id === _variables.p1_score_submit.id) {
+  if (target.id === variables_1.p1_score_submit.id) {
     console.log("submitting");
-    handleScoreSubmit(_variables.p1_input, _variables.p1_output, "p1");
-    (0, _handlers.updateScrollPosition)(_variables.p1_output);
-  } else if (target.id === _variables.p2_score_submit.id) {
-    handleScoreSubmit(_variables.p2_input, _variables.p2_output, "p2");
-    (0, _handlers.updateScrollPosition)(_variables.p2_output);
-  } else if (target.id === _variables.p3_score_submit.id) {
-    handleScoreSubmit(_variables.p3_input, _variables.p3_output, "p3");
-    (0, _handlers.updateScrollPosition)(_variables.p3_output);
-  } else if (target.id === _variables.p4_score_submit.id) {
-    handleScoreSubmit(_variables.p4_input, _variables.p4_output, "p4");
-    (0, _handlers.updateScrollPosition)(_variables.p4_output);
+    handleScoreSubmit(variables_1.p1_input, variables_1.p1_output, "p1");
+    handlers_1.updateScrollPosition(variables_1.p1_output);
+  } else if (target.id === variables_1.p2_score_submit.id) {
+    handleScoreSubmit(variables_1.p2_input, variables_1.p2_output, "p2");
+    handlers_1.updateScrollPosition(variables_1.p2_output);
+  } else if (target.id === variables_1.p3_score_submit.id) {
+    handleScoreSubmit(variables_1.p3_input, variables_1.p3_output, "p3");
+    handlers_1.updateScrollPosition(variables_1.p3_output);
+  } else if (target.id === variables_1.p4_score_submit.id) {
+    handleScoreSubmit(variables_1.p4_input, variables_1.p4_output, "p4");
+    handlers_1.updateScrollPosition(variables_1.p4_output);
   } // Score Totals
 
 
-  if (target.id === _variables.p1_calcTotal.id) {
-    handleScoreTotals(_variables.p1_calcTotal, _variables.p1_showTotal, "li.p1");
-  } else if (target.id === _variables.p2_calcTotal.id) {
-    handleScoreTotals(_variables.p2_calcTotal, _variables.p2_showTotal, "li.p2");
-  } else if (target.id === _variables.p3_calcTotal.id) {
-    handleScoreTotals(_variables.p3_calcTotal, _variables.p3_showTotal, "li.p3");
-  } else if (target.id === _variables.p4_calcTotal.id) {
-    handleScoreTotals(_variables.p4_calcTotal, _variables.p4_showTotal, "li.p4");
+  if (target.id === variables_1.p1_calcTotal.id) {
+    handleScoreTotals(variables_1.p1_calcTotal, variables_1.p1_showTotal, "li.p1");
+  } else if (target.id === variables_1.p2_calcTotal.id) {
+    handleScoreTotals(variables_1.p2_calcTotal, variables_1.p2_showTotal, "li.p2");
+  } else if (target.id === variables_1.p3_calcTotal.id) {
+    handleScoreTotals(variables_1.p3_calcTotal, variables_1.p3_showTotal, "li.p3");
+  } else if (target.id === variables_1.p4_calcTotal.id) {
+    handleScoreTotals(variables_1.p4_calcTotal, variables_1.p4_showTotal, "li.p4");
   }
 }; // Select players
 
 
-_variables.howManyPlayersSubmit.addEventListener("click", function (e) {
+variables_1.howManyPlayersSubmit.addEventListener("click", function (e) {
   e.preventDefault();
-  (0, _handlers.show)(_variables.scoreCard);
-  (0, _handlers.hide)(_variables.howManyPlayersModal);
-
-  var selectedPlayers = _variables.howManyPlayersForm.querySelectorAll("input[type=radio]:checked")[0].value;
+  handlers_1.show(variables_1.scoreCard);
+  handlers_1.hide(variables_1.howManyPlayersModal);
+  var selectedPlayers = variables_1.howManyPlayersForm.querySelectorAll("input[type=radio]:checked")[0].value;
 
   if (selectedPlayers === "2") {
-    (0, _handlers.hide)(_variables.p3_column);
-    (0, _handlers.hide)(_variables.p4_column);
+    handlers_1.hide(variables_1.p3_column);
+    handlers_1.hide(variables_1.p4_column);
   }
 
   if (selectedPlayers >= "3") {
-    (0, _handlers.show)(_variables.p3_column);
-    (0, _handlers.addClass)(_variables.p3_column, "active-player");
-    (0, _handlers.show)(_variables.p3_totalCell);
-    (0, _handlers.hide)(_variables.p4_column);
-    (0, _handlers.enableButton)(_variables.removePlayer); // removeClass(p3_initials_form, "hide");
+    handlers_1.show(variables_1.p3_column);
+    handlers_1.addClass(variables_1.p3_column, "active-player");
+    handlers_1.show(variables_1.p3_totalCell);
+    handlers_1.hide(variables_1.p4_column);
+    handlers_1.enableButton(variables_1.removePlayer); // removeClass(p3_initials_form, "hide");
     // addClass(p3_initials_form, "show");
     // addClass(initialsUpdateModal, "show");
   }
 
   if (selectedPlayers === "4") {
     // removeClass(p4_initials_form, "hide");
-    (0, _handlers.addClass)(_variables.p4_column, "active-player");
-    (0, _handlers.show)(_variables.p4_column);
-    (0, _handlers.show)(_variables.p3_totalCell);
-    (0, _handlers.show)(_variables.p4_totalCell);
-    console.log("p4_totalCell", _variables.p4_totalCell); // addClass(p4_initials_form, "show");
+    handlers_1.addClass(variables_1.p4_column, "active-player");
+    handlers_1.show(variables_1.p4_column);
+    handlers_1.show(variables_1.p3_totalCell);
+    handlers_1.show(variables_1.p4_totalCell);
+    console.log("p4_totalCell", variables_1.p4_totalCell); // addClass(p4_initials_form, "show");
     // addClass(initialsUpdateModal, "show");
   }
 
   if (selectedPlayers >= "2" && selectedPlayers <= "3") {
-    (0, _handlers.enableButton)(_variables.addPlayer); // addClass(initialsUpdateModal, "show");
+    handlers_1.enableButton(variables_1.addPlayer); // addClass(initialsUpdateModal, "show");
   } // removeClass(initialsUpdateModal, "hide");
   // addClass(initialsUpdateModal, "show");
 
 }); // Listeners
 
-
-_variables.addPlayer.addEventListener("click", function (e) {
+variables_1.addPlayer.addEventListener("click", function (e) {
   e.preventDefault();
   var activePlayers = document.querySelectorAll(".active-player");
 
   if (activePlayers.length === 2) {
-    (0, _handlers.removeClass)(_variables.p3_column, "hide");
-    (0, _handlers.enableButton)(_variables.removePlayer);
-    (0, _handlers.addClass)(_variables.p3_column, "show");
-    (0, _handlers.addClass)(_variables.p3_column, "active-player");
-    (0, _handlers.removeClass)(_variables.p3_initials_form, "hide");
+    handlers_1.removeClass(variables_1.p3_column, "hide");
+    handlers_1.enableButton(variables_1.removePlayer);
+    handlers_1.addClass(variables_1.p3_column, "show");
+    handlers_1.addClass(variables_1.p3_column, "active-player");
+    handlers_1.removeClass(variables_1.p3_initials_form, "hide");
   } else if (activePlayers.length === 3) {
-    (0, _handlers.removeClass)(_variables.p4_column, "hide");
-    (0, _handlers.enableButton)(_variables.removePlayer);
-    (0, _handlers.addClass)(_variables.p4_column, "show");
-    (0, _handlers.addClass)(_variables.p4_column, "active-player");
-    (0, _handlers.removeClass)(_variables.p4_initials_form, "hide");
-    (0, _handlers.disableButton)(_variables.addPlayer);
+    handlers_1.removeClass(variables_1.p4_column, "hide");
+    handlers_1.enableButton(variables_1.removePlayer);
+    handlers_1.addClass(variables_1.p4_column, "show");
+    handlers_1.addClass(variables_1.p4_column, "active-player");
+    handlers_1.removeClass(variables_1.p4_initials_form, "hide");
+    handlers_1.disableButton(variables_1.addPlayer);
   }
 });
-
-_variables.removePlayer.addEventListener("click", function (e) {
+variables_1.removePlayer.addEventListener("click", function (e) {
   e.preventDefault();
-  var p3 = (0, _handlers.isActivePlayer)(_variables.p3_column);
-  var p4 = (0, _handlers.isActivePlayer)(_variables.p4_column);
+  var p3 = handlers_1.isActivePlayer(variables_1.p3_column);
+  var p4 = handlers_1.isActivePlayer(variables_1.p4_column);
 
   if (p3 && p4) {
-    (0, _handlers.enableButton)(_variables.addPlayer);
-    (0, _handlers.handleRemovePlayer)(_variables.p4_column);
-    (0, _handlers.handleRemovePlayer)(_variables.p4_initials_form);
+    handlers_1.enableButton(variables_1.addPlayer);
+    handlers_1.handleRemovePlayer(variables_1.p4_column);
+    handlers_1.handleRemovePlayer(variables_1.p4_initials_form);
     return;
   }
 
   if (p3 && !p4) {
-    (0, _handlers.disableButton)(_variables.removePlayer);
-    (0, _handlers.handleRemovePlayer)(_variables.p3_column);
-    (0, _handlers.handleRemovePlayer)(_variables.p3_initials_form);
+    handlers_1.disableButton(variables_1.removePlayer);
+    handlers_1.handleRemovePlayer(variables_1.p3_column);
+    handlers_1.handleRemovePlayer(variables_1.p3_initials_form);
     return;
   }
 });
-
-(0, _handlers.updateInitals)(_variables.p1_initials_form, _variables.p1_initials);
-(0, _handlers.saveInitials)(_variables.p1_save_initials, _variables.p1_initials_form);
-(0, _handlers.updateInitals)(_variables.p2_initials_form, _variables.p2_initials);
-(0, _handlers.saveInitials)(_variables.p2_save_initials, _variables.p2_initials_form);
-(0, _handlers.updateInitals)(_variables.p3_initials_form, _variables.p3_initials);
-(0, _handlers.saveInitials)(_variables.p3_save_initials, _variables.p3_initials_form);
-(0, _handlers.updateInitals)(_variables.p4_initials_form, _variables.p4_initials);
-(0, _handlers.saveInitials)(_variables.p4_save_initials, _variables.p4_initials_form);
-},{"./js/handlers":"js/handlers.js","./js/variables":"js/variables.js"}],"../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+handlers_1.updateInitals(variables_1.p1_initials_form, variables_1.p1_initials);
+handlers_1.saveInitials(variables_1.p1_save_initials, variables_1.p1_initials_form);
+handlers_1.updateInitals(variables_1.p2_initials_form, variables_1.p2_initials);
+handlers_1.saveInitials(variables_1.p2_save_initials, variables_1.p2_initials_form);
+handlers_1.updateInitals(variables_1.p3_initials_form, variables_1.p3_initials);
+handlers_1.saveInitials(variables_1.p3_save_initials, variables_1.p3_initials_form);
+handlers_1.updateInitals(variables_1.p4_initials_form, variables_1.p4_initials);
+handlers_1.saveInitials(variables_1.p4_save_initials, variables_1.p4_initials_form);
+},{"./src/js/handlers":"src/js/handlers.js","./src/js/variables":"src/js/variables.js"}],"../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -507,7 +506,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49353" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51687" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -683,5 +682,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","app.js"], null)
-//# sourceMappingURL=/app.c328ef1a.js.map
+},{}]},{},["../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","app.ts"], null)
+//# sourceMappingURL=/app.c61986b1.js.map

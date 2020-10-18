@@ -149,7 +149,7 @@ table {
 .score-card {
   display: flex;
   flex-direction: row;
-  height: 85vh;
+  height: 55vh;
 }
 
 .score-card__head {
@@ -431,6 +431,7 @@ input {
 
 .form__radio-wrapper {
   display: flex;
+  flex-direction: column;
   margin-bottom: 20px;
   width: 100%;
 }
@@ -446,10 +447,10 @@ input {
 .form__radio-wrapper label:before {
   background: white;
   bottom: 0;
-  border-radius: 30px;
+  border-radius: 5px;
   content: "";
-  height: 30px;
-  width: 30px;
+  height: 70px;
+  width: 70px;
   position: absolute;
   z-index: -2;
 }
@@ -459,10 +460,10 @@ input[type=radio] {
   -moz-appearance: none;
   cursor: pointer;
   position: relative;
-  left: 56px;
-  height: 30px;
-  width: 30px;
-  bottom: -3px;
+  left: 116px;
+  height: 70px;
+  width: 70px;
+  bottom: 20px;
   opacity: 0;
   z-index: 2;
   transition: all 0.2s;
